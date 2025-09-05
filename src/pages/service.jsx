@@ -42,7 +42,7 @@ const ServicesPage = () => {
       {/* HERO SECTION */}
       <section
         className="relative h-[60vh] w-full bg-cover bg-center text-white"
-        style={{ backgroundImage: "url('/Lovera (6).png')" }}
+        style={{ backgroundImage: "url('/images/service.jpg')" }}
       >
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>

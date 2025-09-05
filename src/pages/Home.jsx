@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaInstagram, FaPinterestP } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,7 +16,7 @@ const Home = () => {
         className="relative h-screen w-full bg-cover bg-center text-white"
         style={{ backgroundImage: "url('/hero.jpg')" }}
       >
-        <div className="absolute inset-0 bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Logo */}
         <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
@@ -39,20 +39,23 @@ const Home = () => {
             at <span className="font-extrabold">A TIME.</span>
           </h1>
           <a
-  href="/contact"
-  className="mt-8 px-6 py-3 border border-white hover:bg-white hover:text-black transition"
->
-  CONTACT US
-</a>
-
+            href="/contact"
+            className="mt-8 px-6 py-3 border border-white hover:bg-white hover:text-black transition"
+          >
+            CONTACT US
+          </a>
         </div>
 
         {/* Social Icons */}
         <div className="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-6 text-2xl z-10">
-          <a href="https://www.instagram.com/camerachee?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="hover:text-gray-300">
+          <a
+            href="https://www.instagram.com/camerachee/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-300"
+          >
             <FaInstagram />
           </a>
-        
         </div>
 
         {/* Scroll Down */}
@@ -79,7 +82,6 @@ const Home = () => {
             <a href="/about" className="hover:text-gray-500">About Us</a>
             <a href="/faq" className="hover:text-gray-500">FAQ</a>
             <a href="/service" className="hover:text-gray-500">Service</a>
-
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -110,30 +112,10 @@ const Home = () => {
               <a href="/faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</a>
               <a href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
               <a href="/service" onClick={() => setIsMobileMenuOpen(false)}>Service</a>
-
             </nav>
           </div>
         )}
       </header>
-
-      {/* ABOUT SECTION */}
-      <section className="bg-white text-center py-20 px-6">
-        <p className="uppercase text-sm tracking-widest text-gray-500 mb-6">
-          Wedding Photography Team
-        </p>
-        <h2 className="text-3xl md:text-5xl leading-snug mb-6">
-          Capturing the <span className="italic">moments</span> <br />
-          that <span className="italic">really</span>{" "}
-          <span className="font-bold">MATTER.</span>
-        </h2>
-        <div className="w-12 h-[1px] bg-gray-300 mx-auto mb-6"></div>
-        <p className="max-w-3xl mx-auto text-gray-600 leading-relaxed">
-          Our approach to documenting life’s greatest memories is authentic and
-          intentional. We believe that the best photos are created the way you
-          fall in love – naturally. Let us take you on this journey and guide
-          you through every step of the way.
-        </p>
-      </section>
 
       {/* FEATURED WORK SECTION */}
       <section className="bg-white py-20 px-6">
@@ -160,22 +142,26 @@ const Home = () => {
       </section>
 
       {/* ABOUT US SECTION */}
-      <section className="bg-white text-center py-20 px-6">
-        <h2 className="text-3xl md:text-5xl text-black mb-6">ABOUT US</h2>
-        <div className="w-12 h-[1px] bg-gray-300 mx-auto mb-6"></div>
-        <p className="max-w-4xl mx-auto text-gray-700 leading-relaxed mb-6 text-lg">
-          Hello there! Let us tell you why we have the most magical and
-          fulfilling job in the world. We are in love with love. We are
-          mesmerized by elegant brides, soft lighting, natural settings and
-          bubbly personalities of the bride and groom. We are the artisans who
-          capture the heartbeat of your wedding day and transform it into visual
-          timestamps. Our family is a team of passionate photographers who had
-          the lucky chance in life to turn our passion into a career. We love
-          cracking jokes and don’t take life too seriously – we are down to
-          earth and easy to deal with. Hearing your stories and vision about
-          your special day is important to us and there is no such thing as too
-          many details!
-        </p>
+      <section
+        className="relative bg-cover bg-center text-white text-center py-24 px-6"
+        style={{ backgroundImage: "url('/about.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">ABOUT US</h2>
+          <div className="w-12 h-[2px] bg-white mx-auto mb-6"></div>
+          <p className="text-lg md:text-xl leading-relaxed mb-8">
+            We’re storytellers who believe love is best captured naturally. 
+            Our passion is turning life’s most important moments into timeless 
+            memories filled with laughter, emotion, and elegance.
+          </p>
+          <a
+            href="/about"
+            className="inline-block px-8 py-3 bg-white text-black font-semibold rounded-md shadow-lg hover:bg-gray-200 transition"
+          >
+            Learn More
+          </a>
+        </div>
       </section>
 
       {/* PORTFOLIO SECTION */}
@@ -214,26 +200,85 @@ const Home = () => {
         </div>
       </section>
 
-      {/* INSTAGRAM SECTION */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl mb-12">Follow Us on Instagram</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <a href="https://www.instagram.com/p/DBk3qCxuw3e/" target="_blank">
-              <img src="/insta1.jpeg" alt="Instagram 1" className="w-full h-[300px] object-cover hover:opacity-80 transition" />
-            </a>
-            <a href="https://www.instagram.com/p/C673m-tOyRh/" target="_blank">
-              <img src="/insta2.jpeg" alt="Instagram 2" className="w-full h-[300px] object-cover hover:opacity-80 transition" />
-            </a>
-            <a href="https://www.instagram.com/p/C5UBO8Fu-1p/" target="_blank">
-              <img src="/insta3.jpeg" alt="Instagram 3" className="w-full h-[300px] object-cover hover:opacity-80 transition" />
-            </a>
-            <a href="https://www.instagram.com/p/C7GJ4KSOUD2/" target="_blank">
-              <img src="/insta4.jpeg" alt="Instagram 4" className="w-full h-[300px] object-cover hover:opacity-80 transition" />
-            </a>
-          </div>
-        </div>
-      </section>
+{/* MINI PHOTO ALBUM GIFT SECTION */}
+<section className="bg-white py-20 px-6 text-center">
+  <div className="max-w-2xl mx-auto flex flex-col items-center">
+
+    {/* Album Image */}
+    <img
+      src="/album.jpg"  // 🔄 Replace with your album image
+      alt="Mini Photo Album Gift"
+      className="rounded-md shadow-md object-cover w-full max-w-sm mb-10"
+    />
+
+    {/* Subtitle */}
+    <p className="uppercase tracking-[0.2em] text-gray-500 text-xs mb-3">
+      A Gift For Our Couples
+    </p>
+
+    {/* Title */}
+    <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6">
+      The Memory Album
+    </h2>
+
+    {/* Description */}
+    <p className="text-lg text-gray-700 font-serif leading-relaxed mb-10">
+      Your wedding is one of the most special and amazing days of your life...  
+      you finally get to celebrate spending forever ever after with your best friend,  
+      surrounded by your loving family and amazing friends!
+    </p>
+
+    {/* Button */}
+    <a
+      href="/contact"
+      className="inline-block px-8 py-3 border border-black text-black tracking-wide uppercase text-sm font-medium hover:bg-black hover:text-white transition"
+    >
+      Explore The Memory Album
+    </a>
+  </div>
+</section>
+
+
+   
+
+
+     {/* INSTAGRAM SECTION */}
+<section className="bg-white py-10 px-6">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-2xl md:text-3xl mb-6">Follow Us on Instagram</h2>
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <a href="https://www.instagram.com/p/DBk3qCxuw3e/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="/insta1.jpeg" 
+          alt="Instagram 1" 
+          className="w-full h-[120px] object-cover rounded-md hover:opacity-80 transition" 
+        />
+      </a>
+      <a href="https://www.instagram.com/p/C673m-tOyRh/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="/insta2.jpeg" 
+          alt="Instagram 2" 
+          className="w-full h-[120px] object-cover rounded-md hover:opacity-80 transition" 
+        />
+      </a>
+      <a href="https://www.instagram.com/p/C5UBO8Fu-1p/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="/insta3.jpeg" 
+          alt="Instagram 3" 
+          className="w-full h-[120px] object-cover rounded-md hover:opacity-80 transition" 
+        />
+      </a>
+      <a href="https://www.instagram.com/p/C7GJ4KSOUD2/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="/insta4.jpeg" 
+          alt="Instagram 4" 
+          className="w-full h-[120px] object-cover rounded-md hover:opacity-80 transition" 
+        />
+      </a>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
